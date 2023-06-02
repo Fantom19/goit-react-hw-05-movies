@@ -16,8 +16,8 @@ export const MoviesList = ({ movies }) => {
               <img
                 src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                 alt={title}
-                width="150"
-                height="200"
+                width="300"
+                height="400"
               />
               <span className={css.description}>{name || title}</span>
             </Link>
