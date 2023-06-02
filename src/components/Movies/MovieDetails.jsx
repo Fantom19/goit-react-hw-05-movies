@@ -32,9 +32,7 @@ const MovieDetails = () => {
     movieById;
   return (
     <div className={css.wrapper}>
-      <Link to={refLocation.current ?? '/'} className={css.link}>
-        Go back
-      </Link>
+      <Link to={refLocation.current ?? '/'}>Go back</Link>
       <div className={css.wrapperTitle}>
         <img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
