@@ -1,8 +1,8 @@
-import { MoviesList } from 'components/Movies/MoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMoviesByName } from 'Api/Api';
-import css from './Movie.module.css';
+import css from './Movies.module.css';
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');

@@ -1,5 +1,6 @@
 import { searchMovieById } from 'Api/Api';
 import { useEffect, useState, useRef } from 'react';
+import image from 'images/notFound.jpeg';
 import {
   Link,
   NavLink,
@@ -7,7 +8,7 @@ import {
   useLocation,
   useParams,
 } from 'react-router-dom';
-import css from './Movies.module.css';
+import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { moviesId } = useParams();
@@ -34,12 +35,16 @@ const MovieDetails = () => {
     <div className={css.wrapper}>
       <Link to={refLocation.current ?? '/'}>Go back</Link>
       <div className={css.wrapperTitle}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-          alt={title}
-          width="300"
-          height="400"
-        />
+        {poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+            alt={title}
+            width="300"
+            height="400"
+          />
+        ) : (
+          <img src={image} alt={title} width="300" height="400" />
+        )}
         <div className={css.wrapperDescription}>
           <h2>
             {title}({new Date(release_date).getFullYear()})

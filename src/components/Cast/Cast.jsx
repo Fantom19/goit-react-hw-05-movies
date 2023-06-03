@@ -2,7 +2,7 @@ import { searchMovieByCast } from 'Api/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css';
-import image from 'images/ukraine.jpeg';
+import image from 'images/notFound.jpeg';
 
 const Cast = () => {
   const { moviesId } = useParams();
