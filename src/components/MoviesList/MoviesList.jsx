@@ -14,16 +14,16 @@ export const MoviesList = ({ movies }) => {
               state={{ location }}
               className={css.link__movies}
             >
-              {poster_path ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                  alt={title}
-                  width="300"
-                  height="400"
-                />
-              ) : (
-                <img src={image} alt={name} width="300" height="400" />
-              )}
+              <img
+                src={
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                    : image
+                }
+                alt={title}
+                width="300"
+                height="400"
+              />
               <span className={css.description}>{name || title}</span>
             </Link>
           </li>

@@ -35,16 +35,16 @@ const MovieDetails = () => {
     <div className={css.wrapper}>
       <Link to={refLocation.current ?? '/'}>Go back</Link>
       <div className={css.wrapperTitle}>
-        {poster_path ? (
-          <img
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-            alt={title}
-            width="300"
-            height="400"
-          />
-        ) : (
-          <img src={image} alt={title} width="300" height="400" />
-        )}
+        <img
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : image
+          }
+          alt={title}
+          width="300"
+          height="400"
+        />
         <div className={css.wrapperDescription}>
           <h2>
             {title}({new Date(release_date).getFullYear()})

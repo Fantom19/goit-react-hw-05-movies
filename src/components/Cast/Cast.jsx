@@ -23,16 +23,16 @@ const Cast = () => {
       {cast &&
         cast.map(({ character, profile_path, name, id }) => (
           <li key={id} className={css.item}>
-            {profile_path ? (
-              <img
-                src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                alt={name}
-                width="140"
-                height="175"
-              />
-            ) : (
-              <img src={image} alt={name} width="140" height="175" />
-            )}
+            <img
+              src={
+                profile_path
+                  ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                  : image
+              }
+              alt={name}
+              width="140"
+              height="175"
+            />
             <div className={css.description}>
               <h3>{name}</h3>
               <h4>Character: </h4>

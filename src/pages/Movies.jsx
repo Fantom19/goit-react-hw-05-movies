@@ -1,5 +1,5 @@
 import { MoviesList } from 'components/MoviesList/MoviesList';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMoviesByName } from 'Api/Api';
 import css from './Movies.module.css';
@@ -10,21 +10,22 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
 
-  const fetchMovie = useCallback(async () => {
+  const fetchMovie = async () => {
     if (!query) {
       return;
     }
     const response = await searchMoviesByName(query);
     setMovies(response);
-  }, [query]);
+  };
 
-  const handleSubmit = element => {
-    element.preventDefault();
+  const handleSubmit = event => {
+    event.preventDefault();
     setSearchParams({ query: searchQuery });
   };
+
   useEffect(() => {
     fetchMovie();
-  }, [fetchMovie, query]);
+  }, [query]);
 
   return (
     <div className={css.wrapperTitle}>
@@ -32,7 +33,8 @@ const Movies = () => {
         <input
           type="text"
           placeholder="Enter your query here, please"
-          onChange={element => setSearchQuery(element.target.value)}
+          value={searchQuery}
+          onChange={event => setSearchQuery(event.target.value)}
           className={css.input}
         />
         <button type="submit" className={css.button}>
