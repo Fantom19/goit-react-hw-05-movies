@@ -1,5 +1,9 @@
 .list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 20px 16px;
+}
+.author {
+  margin: 5px 0 5px 0;
+  color: red;
 }

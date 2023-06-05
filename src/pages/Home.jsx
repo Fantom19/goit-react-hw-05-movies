@@ -15,7 +15,7 @@ const Home = () => {
       });
   }, []);
 
-  if (!trendingFilms) {
+  if (!trendingFilms.length) {
     return <p>404 Not Found</p>;
   }
 

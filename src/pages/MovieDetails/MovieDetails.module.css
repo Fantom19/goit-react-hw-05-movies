@@ -31,7 +31,13 @@
   gap: 10px;
 }
 
+.goBack:hover,
+.goBack:focus,
 .link:hover,
 .link:focus {
   color: red;
+}
+
+.goBack {
+  margin-left: 27%;
 }

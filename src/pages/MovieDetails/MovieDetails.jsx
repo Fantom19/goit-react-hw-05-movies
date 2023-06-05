@@ -15,7 +15,7 @@ const MovieDetails = () => {
   const location = useLocation();
   const refLocation = useRef(location.state?.location);
   const from = location.state?.from ?? '/';
-  const [movieById, setMovieById] = useState();
+  const [movieById, setMovieById] = useState(null);
   useEffect(() => {
     searchMovieById(moviesId)
       .then(response => {
@@ -33,7 +33,9 @@ const MovieDetails = () => {
     movieById;
   return (
     <div className={css.wrapper}>
-      <Link to={refLocation.current ?? '/'}>Go back</Link>
+      <Link className={css.goBack} to={refLocation.current ?? '/'}>
+        Go back
+      </Link>
       <div className={css.wrapperTitle}>
         <img
           src={
