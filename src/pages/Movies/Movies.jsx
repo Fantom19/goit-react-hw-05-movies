@@ -30,6 +30,7 @@ const Movies = () => {
   const handleSubmit = event => {
     event.preventDefault();
     setSearchParams({ query: searchQuery });
+    setSearchQuery('');
   };
 
   return (
